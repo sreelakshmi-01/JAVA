@@ -1,0 +1,79 @@
+package javaLab;
+
+import java.util.Scanner;
+class employee1
+{
+	String name,age,phnum,add,salary;
+
+	void printsalary()
+	{
+		System.out.println("Salary:\t "+salary);
+	}
+	void display()
+	{
+		System.out.println("NAME:\t "+name);
+		System.out.println("AGE :\t"+age);
+		System.out.println("NUM :\t"+phnum);
+		System.out.println("ADDRESS: "+add);
+	}
+}
+class officer extends employee1
+	{
+		String specialisation;
+
+	}
+class manager extends employee1
+	{
+		String department;
+	}
+
+public class Inheritance{
+	public static void main (String[]args) {
+		
+		Scanner in=new Scanner(System.in);
+		officer of=new officer();
+		manager m=new manager();
+		System.out.println("\tOFFICER\n");
+		System.out.print("NAME: ");
+		of.name=in.nextLine();
+		System.out.print("AGE:  ");
+		of.age=in.nextLine();
+		System.out.print("PHONE NO: ");
+		of.phnum=in.nextLine();
+		System.out.print("ADDRESS: ");
+		of.add=in.nextLine();
+		System.out.print("SALARY: ");
+		of.salary=in.nextLine();
+
+		System.out.println("\n\tMANAGER\n");
+		System.out.print("NAME: ");
+		m.name=in.nextLine();
+		System.out.print("AGE: ");
+		m.age=in.nextLine();
+		System.out.print("PHONE NUMBER: ");
+		m.phnum=in.nextLine();
+		System.out.print("ADDRESS: ");
+		m.add=in.nextLine();
+		System.out.print("SALARY: ");
+		m.salary=in.nextLine();
+		System.out.println(" \n\tOFFICER SPECIALISATION: ");
+		of.specialisation=in.nextLine();
+		System.out.println("\tMANAGER DEPARTMENT: ");
+		m.department=in.nextLine();
+
+
+		System.out.println("Details of OFFICER");
+		of.display();
+		of.printsalary();
+		System.out.println("\nOfficer Specialisation:\t"+of.specialisation);
+		System.out.println("\nDetails of MANAGER");
+		m.display();
+		m.printsalary();
+		System.out.println("\nManager Department: "+m.department);
+
+in.close();
+
+}
+}
+
+

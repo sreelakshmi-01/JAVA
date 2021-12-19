@@ -1,0 +1,50 @@
+/* Author: Sreelakshmi S
+ * Dated : 09/12/2021*/
+
+package javaLab;
+abstract class Shapes
+{
+	abstract void numberOfSide();
+}
+	
+		class Rectangle extends Shapes
+		{
+			void numberOfSide() 
+			{
+				System.out.println("I am Rectangle, I have 4 sides.");
+			}
+			
+		}
+		
+		class Triangle extends Shapes
+		{
+			void numberOfSide() 
+			{
+				System.out.println("\nI am Triangle, I have 3 sides.");
+			}
+			
+		}
+		
+		class Hexagon extends Shapes
+		{
+			void numberOfSide()
+			{
+				System.out.println("\nI am Hexgaon, I have 6 sides.");
+			}					
+	}
+
+public class Abstract {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Shapes s;
+		s= new Rectangle();
+		s.numberOfSide();
+		s= new Triangle();
+		s.numberOfSide();
+		s= new Hexagon();
+		s.numberOfSide();
+		
+	}
+
+}

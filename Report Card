@@ -1,0 +1,41 @@
+package test;
+import java.util.Scanner;
+public class ReportCard {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Enter name: ");
+		String Name = sc.nextLine();
+		System.out.println("Enter roll no: ");
+		int r1 = sc.nextInt();
+		System.out.println("Enter the percentage of attendence: ");
+		float a1 = sc.nextFloat();
+		if (a1 > 90)
+			System.out.println("Attendence mark is 10");
+		else 
+			System.out.println("Attendence mark is "+ a1/10);
+		System.out.println("Enter the marks(out of 100) of Physics, Chemistry, and Maths: ");
+		float m1 = sc.nextFloat();
+		float m2 = sc.nextFloat();
+		float m3 = sc.nextFloat();
+		float total = m1+m2+m3;
+		float percentage = total*100/300;
+		System.out.println("Percentage = "+ percentage);
+		if (percentage >= 90)
+			System.out.println("O Grade");
+		else if (percentage >=80 && percentage<90)
+			System.out.println("A Grade");
+		else if (percentage >=70 && percentage <80)
+			System.out.println("B Grade");
+			else if (percentage >= 60 && percentage < 70)
+				System.out.println("C Grade");
+			else if (percentage >= 50 && percentage < 60)
+				System.out.println("D Grade");
+			else if (percentage >=40 && percentage < 50)
+				System.out.println("E Grade");
+			else 
+				System.out.println("F Grade");	
+		sc.close();
+	}
+}

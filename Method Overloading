@@ -1,0 +1,42 @@
+/* Author: Sreelakshmi S
+ * Dated : 09/12/2021*/
+
+package javaLab;
+import java.util.*;
+class Shape{
+	void area (double height, double base) {
+		double area = height*base/2;
+		System.out.println("Area of triangle with height " +height + " and base " + base + " is: "+area);
+	}
+	void area (float length, float width) {
+		double area = length*width;
+		System.out.println("Area of rectangle with length " +length + "and width " + width + " is: "+area);
+	}
+	void area (double radius) {
+		double area = 3.14f*radius*radius;
+		System.out.println("Area of circle with radius "+radius+ " is: " +area);
+	}
+	
+}
+public class MethodOverloading {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner ob = new Scanner (System.in);
+		Shape ar = new Shape();
+		System.out.println("Enter the radius of the Circle");
+		double radius = ob.nextDouble();
+		System.out.println("Enter the length of the Rectangle");
+		float length =  ob.nextFloat();
+		System.out.println("Enter the width of the Rectangle");
+		float width =  ob.nextFloat();
+		System.out.println("Enter the Base of the Triangle");
+		double base = ob.nextDouble();
+		System.out.println("Enter the height of the Triangle");
+		double height = ob.nextDouble();
+		ar.area(radius);
+		ar.area(length, width);
+		ar.area(height, base);
+		ob.close();
+	}
+}

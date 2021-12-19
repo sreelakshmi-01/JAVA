@@ -1,0 +1,52 @@
+package javaLab;
+import java.util.*;
+
+class Employee
+{
+	float salary,S,DA,HAR;
+	void display()
+	{
+		System.out.println("Name of the class is EMPOLYEE");
+	}
+	void calcsalary()
+	{
+		S=salary+(DA/100*salary)+(HAR/100*salary);
+		System.out.println("\tThe gross salary of the employee is "+S);
+	}
+}
+class Engineer extends Employee
+{
+	void display()
+	{
+		super.display();
+		super.calcsalary();
+		System.out.println("Name of the class is ENGINEER");
+	}
+	void calcsalary()
+	{
+		
+		System.out.println("\tThe gross salary of the engineer is "+2*S);
+	}
+}
+public class Salary
+{
+
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+		Engineer e= new Engineer();
+Scanner in= new Scanner(System.in);
+System.out.println("Enter the basic salary");
+e.salary=in.nextFloat();
+System.out.println("Enter the DA of the employee");
+e.DA=in.nextFloat();
+System.out.println("Enter the HAR of the employee");
+e.HAR=in.nextFloat();
+ 
+e.display();
+e.calcsalary();
+
+   in.close();
+	}
+
+}

@@ -1,0 +1,62 @@
+import java.util.Scanner;
+import java.io.*;
+
+public class Experiment12 {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        FileWriter fout = new FileWriter("Numbers.txt");
+        int num;
+        System.out.println("Enter a few numbers:");
+        String numbers = sc.nextLine();
+        BufferedWriter bw = new BufferedWriter(fout);
+        bw.write(numbers);
+        bw.close();
+        fout.close();
+        FileReader fin = new FileReader("Numbers.txt");
+        FileWriter even = new FileWriter("Even.txt");
+        FileWriter odd = new FileWriter("Odd.txt");
+        BufferedReader br = new BufferedReader(fin);
+        numbers = br.readLine();
+        for(String element : numbers.split(" ")) {
+            num = Integer.parseInt(element);
+            if(num % 2 == 0) {
+                even.write(element+" ");
+            }
+            else {
+                odd.write(element+" ");
+            }
+        }
+        fin.close();
+        even.close();
+        odd.close();
+
+        System.out.println("The contents of Numbers.txt are:");
+        fin = new FileReader("Numbers.txt");
+        BufferedReader number = new BufferedReader(fin);
+        numbers = number.readLine();
+        System.out.println(numbers);
+        number.close();
+        fin.close();
+        System.out.println();
+
+        System.out.println("The contents of Even.txt are:");
+        fin = new FileReader("Even.txt");
+        number = new BufferedReader(fin);
+        numbers = number.readLine();
+        System.out.println(numbers);
+        number.close();
+        fin.close();
+        System.out.println();
+
+        System.out.println("The contents of Odd.txt are:");
+        fin = new FileReader("Odd.txt");
+        number = new BufferedReader(fin);
+        numbers = number.readLine();
+        System.out.println(numbers);
+        number.close();
+        fin.close();
+        System.out.println();
+        sc.close();
+    }
+}
+
